@@ -1,13 +1,14 @@
 import Navbar from '@/components/Navbar';
+import { Hero } from '@/components';
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center">
+        <div className="bg-background min-h-screen">
             <Navbar />
 
-            <h1 className="mb-4 text-4xl font-bold">
-                Welcome to Talyslan Portfólio, galera
-            </h1>
+            <main>
+                <Hero />
+            </main>
         </div>
     );
 }
