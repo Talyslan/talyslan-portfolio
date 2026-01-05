@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { projects } from './data';
 import { ProjectDialog } from './[id]';
+import { ProjectsView } from './_components/ProjectsView';
 
 export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(
@@ -34,60 +34,7 @@ export default function Projects() {
                         </p>
                     </motion.div>
 
-                    <div className="grid gap-6 md:grid-cols-3">
-                        {projects.map((project, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    delay: index * 0.1,
-                                    duration: 0.5,
-                                }}
-                                onClick={() => setSelectedProject(project)}
-                                className="group relative cursor-pointer"
-                            >
-                                <div
-                                    className={`absolute inset-0 rounded-2xl bg-linear-to-br ${project.color} opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100`}
-                                />
-
-                                <div className="bg-card/50 border-border/50 hover:border-primary/30 relative h-full overflow-hidden rounded-2xl border backdrop-blur-sm transition-all duration-500">
-                                    <div className="relative aspect-video overflow-hidden">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-60"
-                                        />
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                            <span className="bg-primary/90 text-primary-foreground rounded-full px-4 py-2 text-sm font-medium backdrop-blur-sm">
-                                                View Details
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div className="p-6">
-                                        <h3 className="group-hover:text-primary mb-2 text-xl font-semibold transition-colors">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-muted-foreground mb-4 line-clamp-4 text-sm">
-                                            {project.description}
-                                        </p>
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tech.map((tech, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="bg-secondary/50 text-muted-foreground rounded-md px-2.5 py-1 font-mono text-xs"
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                    <ProjectsView onSelect={setSelectedProject} />
 
                     <div className="mt-16 text-center">
                         <Button

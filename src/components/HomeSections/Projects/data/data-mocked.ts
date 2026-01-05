@@ -1,6 +1,4 @@
-import projectEcommerce from '@/assets/project-ecommerce.png';
-
-export const projects: Project[] = [
+export const projectsMocked: Project[] = [
     {
         title: 'E-Commerce Platform',
         description:
@@ -8,8 +6,7 @@ export const projects: Project[] = [
         tech: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
         github: '#',
         live: '#',
-        image: projectEcommerce,
-        color: 'from-cyan-500/20 to-teal-500/20',
+        image: '/project-ecommerce.png',
     },
     {
         title: 'Task Management App',
@@ -18,8 +15,7 @@ export const projects: Project[] = [
         tech: ['React', 'TypeScript', 'Node.js', 'Socket.io'],
         github: '#',
         live: '#',
-        image: projectEcommerce,
-        color: 'from-violet-500/20 to-purple-500/20',
+        image: '/project-ecommerce.png',
     },
     {
         title: 'Developer Blog',
@@ -28,8 +24,7 @@ export const projects: Project[] = [
         tech: ['Astro', 'TypeScript', 'Tailwind', 'MDX'],
         github: '#',
         live: '#',
-        image: projectEcommerce,
-        color: 'from-emerald-500/20 to-green-500/20',
+        image: '/project-ecommerce.png',
     },
     {
         title: 'API Dashboard',
@@ -38,7 +33,6 @@ export const projects: Project[] = [
         tech: ['React', 'Python', 'FastAPI', 'Redis'],
         github: '#',
         live: '#',
-        image: projectEcommerce,
-        color: 'from-orange-500/20 to-amber-500/20',
+        image: '/project-ecommerce.png',
     },
 ];

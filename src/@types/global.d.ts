@@ -30,6 +30,19 @@ declare global {
         github: string;
         live: string;
         image: string;
-        color: string;
+    }
+
+    interface GithubRepo {
+        name: string;
+        description: string | null;
+        html_url: string;
+        homepage: string | null;
+        topics: string[];
+        language: string | null;
+    }
+
+    interface FeaturedProject {
+        live: string;
+        image: string;
     }
 }

@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
-import avatarImg from '@/assets/avatar.jpg';
 
 export function Hero() {
     return (
@@ -68,7 +67,7 @@ export function Hero() {
 
                                 <div className="border-primary/30 bg-card relative h-full w-full overflow-hidden rounded-full border-2">
                                     <img
-                                        src={avatarImg}
+                                        src={'/avatar.jpg'}
                                         alt="Talyslan C. P. Canabarro"
                                         className="h-full w-full object-cover"
                                     />
