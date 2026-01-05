@@ -26,7 +26,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
         ],
     },
     {
-        name: 'Backend Systems & APIs',
+        name: 'Backend Systems & APIs & Testing',
         color: 'from-orange-500 to-amber-500',
         skills: [
             { name: 'Node.js', level: 'Proficient' },
@@ -38,6 +38,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
                 name: 'Authentication & Authorization',
                 level: 'Working Knowledge',
             },
+            { name: 'Jest(E2E)', level: 'Working Knowledge' },
+            { name: 'Vitest (E2E)', level: 'Working Knowledge' },
+            { name: 'Nest js', level: 'Working Knowledge' },
         ],
     },
     {
@@ -64,16 +67,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
         ],
     },
     {
-        name: 'Testing, Quality & Reliability',
-        color: 'from-indigo-500 to-blue-500',
-        skills: [
-            { name: 'Unit Testing (Jest)', level: 'Working Knowledge' },
-            { name: 'Integration Testing', level: 'Working Knowledge' },
-            { name: 'Code Review Practices', level: 'Proficient' },
-            { name: 'Debugging & Troubleshooting', level: 'Advanced' },
-        ],
-    },
-    {
         name: 'Design, UX & Product Tools',
         color: 'from-sky-500 to-blue-500',
         skills: [
@@ -81,16 +74,6 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
             { name: 'UI/UX Fundamentals', level: 'Proficient' },
             { name: 'Accessibility (a11y)', level: 'Working Knowledge' },
             { name: 'Product Thinking', level: 'Working Knowledge' },
-        ],
-    },
-    {
-        name: 'Research, Teaching & Communication',
-        color: 'from-fuchsia-500 to-pink-500',
-        skills: [
-            { name: 'Applied Research (PIBIT / PIBIC)', level: 'Proficient' },
-            { name: 'Technical Writing', level: 'Proficient' },
-            { name: 'Teaching & Mentoring', level: 'Working Knowledge' },
-            { name: 'Team Communication', level: 'Advanced' },
         ],
     },
 ];

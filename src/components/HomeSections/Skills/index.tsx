@@ -28,12 +28,10 @@ const itemVariants = {
 export default function Skills() {
     return (
         <section id="skills" className="relative overflow-hidden py-32">
-            {/* Background */}
             <div className="from-background via-card/30 to-background absolute inset-0 bg-linear-to-b" />
 
             <div className="relative z-10 container mx-auto px-6">
                 <div className="mx-auto max-w-6xl">
-                    {/* Section Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +51,6 @@ export default function Skills() {
                         </p>
                     </motion.div>
 
-                    {/* Tech Icons Row */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
@@ -83,7 +80,6 @@ export default function Skills() {
                         ))}
                     </motion.div>
 
-                    {/* Skills by Category */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
@@ -97,7 +93,6 @@ export default function Skills() {
                                 variants={itemVariants}
                                 className="group bg-card/30 border-border/50 hover:border-primary/30 rounded-2xl border p-6 backdrop-blur-sm transition-all duration-500"
                             >
-                                {/* Category Header */}
                                 <div className="mb-6 flex items-center gap-3">
                                     <div
                                         className={`h-8 w-1 rounded-full bg-linear-to-b ${category.color}`}
@@ -107,7 +102,6 @@ export default function Skills() {
                                     </h3>
                                 </div>
 
-                                {/* Skills */}
                                 <div className="space-y-4">
                                     {category.skills.map(
                                         (skill, skillIndex) => (
