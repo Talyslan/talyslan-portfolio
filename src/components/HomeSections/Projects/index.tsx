@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ProjectDialog } from './[id]';
 import { ProjectsView } from './_components/ProjectsView';
 
-export default function Projects() {
+export function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(
         null,
     );

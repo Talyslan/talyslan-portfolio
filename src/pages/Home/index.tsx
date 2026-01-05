@@ -1,14 +1,18 @@
-import Navbar from '@/components/Navbar';
-import { Hero } from '@/components';
-import About from '@/components/HomeSections/About';
-import Skills from '@/components/HomeSections/Skills';
-import Projects from '@/components/HomeSections/Projects';
-import Contact from '@/components/HomeSections/Contact';
-import Footer from '@/components/Footer';
+import {
+    MouseFollower,
+    Navbar,
+    Hero,
+    About,
+    Skills,
+    Projects,
+    Contact,
+    Footer,
+} from '@/components';
 
 export default function Home() {
     return (
         <div className="bg-background min-h-screen">
+            <MouseFollower />
             <Navbar />
 
             <main>

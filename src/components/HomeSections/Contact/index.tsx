@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ContactForm } from './_components/ContactForm';
 import { Mail, MapPin } from 'lucide-react';
 
-export default function Contact() {
+export function Contact() {
     const contactData = [
         {
             icon: Mail,

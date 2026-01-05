@@ -25,7 +25,7 @@ const itemVariants = {
     },
 };
 
-export default function Skills() {
+export function Skills() {
     return (
         <section id="skills" className="relative overflow-hidden py-32">
             <div className="from-background via-card/30 to-background absolute inset-0 bg-linear-to-b" />

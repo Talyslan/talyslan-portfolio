@@ -1,7 +1,7 @@
 import { Code2, Rocket, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function About() {
+export function About() {
     const highlights = [
         {
             icon: Code2,

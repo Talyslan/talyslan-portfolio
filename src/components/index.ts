@@ -1,2 +1,4 @@
+export * from './Footer';
+export * from './HomeSections';
+export * from './MouseFollower';
 export * from './Navbar';
-export * from './HomeSections/Hero';

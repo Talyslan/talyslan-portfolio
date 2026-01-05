@@ -1,7 +1,7 @@
 import { Terminal, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Footer() {
+export function Footer() {
     return (
         <footer className="border-border/50 bg-card/20 border-t py-8">
             <div className="container mx-auto px-6">
