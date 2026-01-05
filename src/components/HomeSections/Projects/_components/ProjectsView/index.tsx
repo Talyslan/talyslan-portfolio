@@ -3,6 +3,7 @@ import { projectsMocked } from '../../data/data-mocked';
 import { MapperProject } from '../../mappers/MapperProject';
 import { useGithubFeaturedProjects } from '../../hooks/useGithubFeaturedProjects';
 import { ProjectsViewSkeleton } from '../ProjectsViewSkeleton';
+import { FEATURED_PROJECTS } from '../../data/data';
 
 interface IProps {
     onSelect: (project: Project) => void;
@@ -11,14 +12,11 @@ interface IProps {
 const MAX_TECH = 5;
 
 export function ProjectsView({ onSelect }: IProps) {
-    const { data, isLoading, isError } = useGithubFeaturedProjects('talyslan', [
-        'guardiao-digital',
-        'due-or-die',
-        'dialogandomais',
-        'maya-ai',
-        'notification-service',
-        'rick-and-morty',
-    ]);
+    const FEATURED_PROJECT_NAMES = Object.keys(FEATURED_PROJECTS);
+    const { data, isLoading, isError } = useGithubFeaturedProjects(
+        'Talyslan',
+        FEATURED_PROJECT_NAMES,
+    );
 
     if (isLoading) return <ProjectsViewSkeleton />;
 
