@@ -1,23 +1,29 @@
 import type { ContactFormData } from '../ContactForm/schema';
 
 export async function SendEmailAction(data: ContactFormData) {
-    console.log(data);
     try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!res.ok) {
+            throw new Error('Request failed');
+        }
 
         return {
             success: true,
             message: 'Email sent successfully!',
         };
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
+    } catch (error) {
         console.error('SendEmailAction error:', error);
 
         return {
             success: false,
-            message:
-                error?.message ||
-                'Failed to send email. Please try again later.',
+            message: 'Failed to send email. Please try again later.',
         };
     }
 }
