@@ -1,0 +1,25 @@
+export {};
+
+declare global {
+    type SkillLevel =
+        | 'Advanced'
+        | 'Proficient'
+        | 'Working Knowledge'
+        | 'Familiar';
+
+    type Skill = {
+        name: string;
+        level: SkillLevel;
+    };
+
+    type SkillCategory = {
+        name: string;
+        color: string;
+        skills: Skill[];
+    };
+
+    type TechStackItem = {
+        name: string;
+        abbr: string;
+    };
+}
