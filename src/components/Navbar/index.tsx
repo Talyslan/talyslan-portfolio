@@ -3,6 +3,7 @@ import { Menu, X, Terminal, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useUser } from '@/hooks/useUser';
 
 const navLinks = [
     { name: 'Home', href: '#home' },
@@ -13,6 +14,7 @@ const navLinks = [
 ];
 
 export function Navbar() {
+    const { curriculumLink } = useUser();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
@@ -58,14 +60,21 @@ export function Navbar() {
                                 {link.name}
                             </motion.a>
                         ))}
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                        <a
+                            href={curriculumLink}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <Download className="h-4 w-4" />
-                            Curriculum
-                        </Button>
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                            >
+                                <Download className="mr-2 h-4 w-4" />
+                                Curriculum
+                            </Button>
+                        </a>
                     </div>
 
                     <button

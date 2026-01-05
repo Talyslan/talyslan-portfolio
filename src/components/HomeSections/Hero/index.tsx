@@ -1,8 +1,11 @@
 import { Button } from '@/components/ui/button';
+import { useUser } from '@/hooks/useUser';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 
 export function Hero() {
+    const { email, githubLink, linkedinLink } = useUser();
+
     return (
         <section
             id="home"
@@ -178,17 +181,17 @@ export function Hero() {
                                 {[
                                     {
                                         icon: Github,
-                                        href: 'https://github.com',
+                                        href: githubLink,
                                         label: 'GitHub',
                                     },
                                     {
                                         icon: Linkedin,
-                                        href: 'https://linkedin.com',
+                                        href: linkedinLink,
                                         label: 'LinkedIn',
                                     },
                                     {
                                         icon: Mail,
-                                        href: 'mailto:hello@example.com',
+                                        href: `mailto:${email}`,
                                         label: 'Email',
                                     },
                                 ].map(({ icon: Icon, href, label }) => (

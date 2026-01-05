@@ -4,14 +4,16 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ProjectDialog } from './[id]';
 import { ProjectsView } from './_components/ProjectsView';
+import { useUser } from '@/hooks/useUser';
 
 export function Projects() {
+    const { githubLink } = useUser();
     const [selectedProject, setSelectedProject] = useState<Project | null>(
         null,
     );
 
     return (
-        <section id="projects" className="relative overflow-hidden py-32">
+        <section id="projects" className="relative overflow-hidden py-20">
             <div className="from-background via-card/20 to-background absolute inset-0 bg-linear-to-b" />
 
             <div className="relative z-10 container mx-auto px-6">
@@ -37,13 +39,19 @@ export function Projects() {
                     <ProjectsView onSelect={setSelectedProject} />
 
                     <div className="mt-16 text-center">
-                        <Button
-                            variant="outline"
-                            className="border-primary text-primary"
+                        <a
+                            href={githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <Github className="mr-2 h-4 w-4" />
-                            View All on GitHub
-                        </Button>
+                            <Button
+                                variant="outline"
+                                className="border-primary text-primary"
+                            >
+                                <Github className="mr-2 h-4 w-4" />
+                                View All on GitHub
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,14 +1,17 @@
 import { Terminal, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useUser } from '@/hooks/useUser';
 
 export function Footer() {
+    const { email, linkedinLink, githubLink } = useUser();
+
     return (
         <footer className="border-border/50 bg-card/20 border-t py-8">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                     <div className="text-muted-foreground flex items-center gap-2">
                         <Terminal className="text-primary h-4 w-4" />
-                        <span className="font-mono text-sm">
+                        <span className="font-mono text-xs">
                             Built by{' '}
                             <span className="text-primary">
                                 Talyslan C. P. Canabarro
@@ -22,11 +25,11 @@ export function Footer() {
 
                     <div className="flex items-center gap-4">
                         {[
-                            { icon: Github, href: 'https://github.com' },
-                            { icon: Linkedin, href: 'https://linkedin.com' },
+                            { icon: Github, href: githubLink },
+                            { icon: Linkedin, href: linkedinLink },
                             {
                                 icon: Mail,
-                                href: 'mailto:talyslancpc@gmail.com',
+                                href: `mailto:${email}`,
                             },
                         ].map(({ icon: Icon, href }, index) => (
                             <motion.a

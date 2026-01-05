@@ -24,7 +24,7 @@ export function About() {
     ];
 
     return (
-        <section id="about" className="relative overflow-hidden py-32">
+        <section id="about" className="relative overflow-hidden py-20">
             <div className="from-card/20 via-background to-background absolute inset-0 bg-linear-to-b" />
 
             <div className="relative z-10 container mx-auto px-6">
