@@ -56,7 +56,7 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
                                 </div>
 
                                 <div className="flex gap-4">
-                                    {project.live && (
+                                    {project.live !== '' && (
                                         <Button asChild>
                                             <a
                                                 href={project.live}

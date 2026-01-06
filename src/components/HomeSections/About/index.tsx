@@ -58,12 +58,14 @@ export function About() {
                         >
                             <p className="text-muted-foreground leading-relaxed">
                                 I'm a fullstack developer with expertise in
-                                modern web technologies. I'm a fullstack
-                                developer focused on building scalable and
-                                well-architected web applications. My background
-                                combines formal technical education, hands-on
-                                project experience, and real-world problem
-                                solving in production systems.
+                                modern web technologies and a Computer Science
+                                student based in Maceió, AL, with over 3 years
+                                of learning experience. I focus on building
+                                scalable and well-architected web applications.
+                                My background combines formal technical
+                                education, hands-on project experience, and
+                                real-world problem solving in production
+                                systems.
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
                                 I work mainly with{' '}

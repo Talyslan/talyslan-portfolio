@@ -1,32 +1,26 @@
 export const FEATURED_PROJECTS: Record<string, FeaturedProject> = {
     'guardiao-digital': {
-        live: 'https://guardiao.digital',
-        // image: '/projects/guardiao-digital.png',
-        image: '/projects/project-mocked.png',
+        live: '',
+        image: '/projects/guardiao-digital.png',
     },
     'due-or-die': {
-        live: 'https://due-or-die.vercel.app',
-        // image: '/projects/due-or-die.png',
-        image: '/projects/project-mocked.png',
+        live: '',
+        image: '/projects/due-or-die.png',
     },
     dialogandomais: {
-        live: 'https://dialogandomais.com.br',
-        // image: '/projects/dialogandomais.png',
-        image: '/projects/project-mocked.png',
+        live: 'https://dialogandomais.vercel.app',
+        image: '/projects/dialogandomais.png',
     },
     'maya-ai': {
-        live: 'https://maya-ai.vercel.app',
-        // image: '/projects/maya-ai.png',
-        image: '/projects/project-mocked.png',
+        live: 'https://maya-ai.vercel.app/',
+        image: '/projects/maya-ai.png',
     },
     'notification-service': {
-        live: 'https://notification-service.vercel.app',
-        // image: '/projects/notification-service.png',
-        image: '/projects/project-mocked.png',
+        live: '',
+        image: '/fallback.png',
     },
     'rick-and-morty': {
-        live: 'https://rick-and-morty-tan.vercel.app',
-        // image: '/projects/rick-and-morty.png',
-        image: '/projects/project-mocked.png',
+        live: 'https://rick-and-morty-tcpc.vercel.app',
+        image: '/projects/rick-and-morty.png',
     },
 };
