@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { DialogTitle } from '@radix-ui/react-dialog';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
@@ -14,7 +15,11 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
         <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
             <AnimatePresence>
                 {open && project && (
-                    <DialogContent forceMount className="overflow-hidden p-0">
+                    <DialogContent
+                        forceMount
+                        className="overflow-hidden p-0"
+                        aria-describedby={undefined}
+                    >
                         <motion.div
                             initial={{ opacity: 0, scale: 0.96, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -36,9 +41,9 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
                             </div>
 
                             <div className="flex-1 overflow-y-auto p-6 md:p-8">
-                                <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+                                <DialogTitle className="mb-4 text-2xl font-bold md:text-3xl">
                                     {project.title}
-                                </h2>
+                                </DialogTitle>
 
                                 <p className="text-muted-foreground mb-6 leading-relaxed">
                                     {project.description}
