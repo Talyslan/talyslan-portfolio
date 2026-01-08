@@ -9,7 +9,7 @@ export function Hero() {
     return (
         <section
             id="home"
-            className="relative flex min-h-screen items-center justify-center overflow-hidden"
+            className="relative flex min-h-screen items-center justify-center overflow-hidden py-24"
         >
             <div className="from-background via-background to-primary/5 absolute inset-0 bg-linear-to-br" />
 
