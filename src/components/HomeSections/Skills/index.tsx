@@ -63,7 +63,7 @@ export function Skills() {
                                 key={index}
                                 variants={itemVariants}
                                 whileHover={{ scale: 1.1, y: -5 }}
-                                className="group relative"
+                                className="group flex flex-col items-center"
                             >
                                 <div className="bg-card/50 border-border/50 hover:border-primary/50 flex h-16 w-16 cursor-pointer items-center justify-center rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] md:h-20 md:w-20">
                                     <span className="text-primary font-mono text-xl font-bold md:text-2xl">
@@ -71,7 +71,7 @@ export function Skills() {
                                     </span>
                                 </div>
 
-                                <div className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 transition-opacity group-hover:opacity-100">
+                                <div className="pointer-events-none opacity-0 transition-opacity group-hover:opacity-100">
                                     <span className="text-muted-foreground font-mono text-xs whitespace-nowrap">
                                         {tech.name}
                                     </span>
