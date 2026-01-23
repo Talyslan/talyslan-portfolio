@@ -1,10 +1,6 @@
 import { motion } from 'framer-motion';
-import {
-    LEVEL_DESCRIPTION,
-    LEVEL_WIDTH,
-    SKILL_CATEGORIES,
-    TECH_STACK,
-} from './data';
+import { LEVEL_WIDTH, SKILL_CATEGORIES, TECH_STACK } from './data';
+import { useTranslation } from 'react-i18next';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,6 +22,8 @@ const itemVariants = {
 };
 
 export function Skills() {
+    const { t } = useTranslation();
+
     return (
         <section id="skills" className="relative overflow-hidden py-20">
             <div className="from-background via-card/30 to-background absolute inset-0 bg-linear-to-b" />
@@ -39,15 +37,17 @@ export function Skills() {
                         transition={{ duration: 0.5 }}
                         className="mb-20 text-center"
                     >
-                        <span className="text-primary font-mono text-sm tracking-wider">
-                            EXPERTISE
+                        <span className="text-primary font-mono text-sm tracking-wider uppercase">
+                            {t('skills.tinyTitle')}
                         </span>
                         <h2 className="mt-4 mb-6 text-4xl font-bold md:text-5xl">
-                            Tech <span className="text-gradient">Stack</span>
+                            {t('skills.title1')}{' '}
+                            <span className="text-gradient">
+                                {t('skills.title2')}
+                            </span>
                         </h2>
                         <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-                            Technologies I use to design, build, and maintain
-                            reliable web systems
+                            {t('skills.subtitle')}
                         </p>
                     </motion.div>
 
@@ -98,7 +98,9 @@ export function Skills() {
                                         className={`h-8 w-1 rounded-full bg-linear-to-b ${category.color}`}
                                     />
                                     <h3 className="text-xl font-semibold">
-                                        {category.name}
+                                        {t(
+                                            `skills.categories.titles.${category.key}`,
+                                        )}
                                     </h3>
                                 </div>
 
@@ -116,15 +118,15 @@ export function Skills() {
 
                                                     <div className="group/level relative">
                                                         <span className="text-primary cursor-help font-mono text-xs">
-                                                            {skill.level}
+                                                            {t(
+                                                                `skills.categories.levels.${skill.level}`,
+                                                            )}
                                                         </span>
 
-                                                        <div className="bg-card text-muted-foreground pointer-events-none absolute -top-14 right-0 z-20 w-64 translate-y-1 rounded-md px-3 py-2 text-xs opacity-0 shadow-md transition-all duration-200 ease-out group-hover/level:translate-y-0 group-hover/level:opacity-100">
-                                                            {
-                                                                LEVEL_DESCRIPTION[
-                                                                    skill.level
-                                                                ]
-                                                            }
+                                                        <div className="bg-card text-muted-foreground pointer-events-none absolute -top-14 right-0 z-20 w-64 rounded-md px-3 py-2 text-xs opacity-0 transition-all group-hover/level:opacity-100">
+                                                            {t(
+                                                                `skills.categories.levelDescriptions.${skill.level}`,
+                                                            )}
                                                         </div>
                                                     </div>
                                                 </div>

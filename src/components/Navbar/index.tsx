@@ -4,16 +4,19 @@ import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useUser } from '@/hooks/useUser';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from '../LanguageSwitcher';
 
 const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { key: 'home', href: '#home' },
+    { key: 'about', href: '#about' },
+    { key: 'skills', href: '#skills' },
+    { key: 'projects', href: '#projects' },
+    { key: 'contact', href: '#contact' },
 ];
 
 export function Navbar() {
+    const { t } = useTranslation();
     const { curriculumLink } = useUser();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -50,14 +53,14 @@ export function Navbar() {
                     <div className="hidden items-center gap-8 md:flex">
                         {navLinks.map((link, index) => (
                             <motion.a
-                                key={link.name}
+                                key={link.key}
                                 href={link.href}
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-200"
                             >
-                                {link.name}
+                                {t(`nav.${link.key}`)}
                             </motion.a>
                         ))}
                         <a
@@ -72,9 +75,10 @@ export function Navbar() {
                                 className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                             >
                                 <Download className="mr-2 h-4 w-4" />
-                                Curriculum
+                                {t('nav.curriculum')}
                             </Button>
                         </a>
+                        <LanguageSwitcher />
                     </div>
 
                     <button
@@ -99,12 +103,12 @@ export function Navbar() {
                         >
                             {navLinks.map((link) => (
                                 <Link
-                                    key={link.name}
+                                    key={link.key}
                                     to={link.href}
                                     className="text-muted-foreground hover:text-primary block py-3 transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    {link.name}
+                                    {t(`nav.${link.key}`)}
                                 </Link>
                             ))}
                             <Button
@@ -112,7 +116,7 @@ export function Navbar() {
                                 size="sm"
                                 className="border-primary text-primary mt-4 w-full"
                             >
-                                Resume
+                                {t('nav.curriculum')}
                             </Button>
                         </motion.div>
                     )}

@@ -1,0 +1,124 @@
+{
+    "nav": {
+        "home": "Início",
+        "about": "Sobre",
+        "skills": "Habilidades",
+        "projects": "Projetos",
+        "contact": "Contato",
+        "curriculum": "Currículo"
+    },
+    "home": {
+        "status": "Disponível para trabalho",
+        "position": "Engenheiro de Software",
+        "description": "Engenheiro de Software e estudante de Ciência da Computação focado em construir aplicações web modernas e escaláveis com TypeScript, React e Next.js, guiado por arquitetura limpa e ótimas experiências de usuário.",
+        "cta": "Ver Meus Projetos",
+        "ctaContact": "Entrar em Contato"
+    },
+    "about": {
+        "tinyTitle": "Sobre",
+        "title1": "Sobre",
+        "title2": "Mim",
+        "subtitle": "Desenvolvedor fullstack construindo aplicações web escaláveis e bem arquitetadas",
+        "description1": "Sou um desenvolvedor fullstack com experiência em tecnologias modernas para web e mais de 3 anos de prática. Atuo focado na construção de aplicações escaláveis e bem arquitetadas. Minha trajetória combina formação técnica, experiência prática em projetos e resolução de problemas reais em sistemas de produção.",
+        "techStack": "Trabalho principalmente com <tech>TypeScript</tech>, <tech>React</tech> e <tech>Next.js</tech>, desenvolvendo frontends modernos com forte foco em performance, acessibilidade e manutenibilidade. No backend, utilizo <tech>Node.js</tech> e <tech>Python</tech>, projetando APIs, integrações e sistemas que escalam de forma confiável.",
+        "highlights": {
+            "architecture": {
+                "title": "Arquitetura Limpa",
+                "description": "Projetando sistemas com limites bem definidos, abstrações fortes e foco em manutenção a longo prazo."
+            },
+            "performance": {
+                "title": "Performance e Escalabilidade",
+                "description": "Construindo aplicações eficientes e confiáveis que escalam sem comprometer a experiência do usuário."
+            },
+            "collaboration": {
+                "title": "Engenharia Colaborativa",
+                "description": "Trabalhando próximo a times multidisciplinares para alinhar soluções técnicas às reais necessidades do produto."
+            }
+        },
+        "code": {
+            "name": "Talyslan C. P. Canabarro",
+            "role": "Desenvolvedor Fullstack",
+            "location": "Maceió, AL || Remoto",
+            "passion": "Resolver problemas do mundo real com código"
+        }
+    },
+    "skills": {
+        "tinyTitle": "Especialidades",
+        "title1": "Stack",
+        "title2": "Tecnológico",
+        "subtitle": "Tecnologias que utilizo para projetar, desenvolver e manter sistemas web confiáveis",
+        "categories": {
+            "titles": {
+                "languages": "Linguagens de Programação",
+                "frontend": "Arquitetura Frontend e UI Engineering",
+                "backend": "Sistemas Backend, APIs e Testes",
+                "foundations": "Fundamentos de Engenharia",
+                "devops": "DevOps, Infraestrutura e Ferramentas de Engenharia",
+                "design": "Design, UX e Ferramentas de Produto"
+            },
+            "levels": {
+                "advanced": "Avançado",
+                "proficient": "Proficiente",
+                "working": "Conhecimento Prático",
+                "familiar": "Familiar"
+            },
+            "levelDescriptions": {
+                "advanced": "Utilizado diariamente em produção. Confortável tomando decisões de arquitetura e design.",
+                "proficient": "Utilizado regularmente em projetos reais. Confiante para implementar funcionalidades e resolver problemas.",
+                "working": "Experiência prática em projetos reais, mas não faz parte do meu stack principal.",
+                "familiar": "Explorado e utilizado de forma experimental. Compreensão básica de conceitos e ferramentas."
+            }
+        }
+    },
+    "projects": {
+        "tinyTitle": "Projetos",
+        "title1": "Trabalhos",
+        "title2": "Destaque",
+        "subtitle": "Projetos que desenvolvi e publiquei",
+        "cta": "Ver Todos no GitHub",
+        "repoLink": "Código Fonte",
+        "liveLink": "Demo Online"
+    },
+    "contact": {
+        "tinyTitle": "Contato",
+        "title1": "Vamos",
+        "title2": "Construir",
+        "title3": "Algo Juntos",
+        "subtitle": "Tem um projeto em mente? Vamos conversar sobre como podemos trabalhar juntos.",
+        "sideLeft": {
+            "title": "Vamos nos conectar",
+            "description": "Sempre aberto a novos desafios, projetos paralelos ou apenas uma conversa sobre tecnologia. Seja desenvolvimento web, integrações ou uma ideia que te empolgue, vou adorar ouvir.",
+
+            "items": {
+                "email": "Email",
+                "location": "Localização"
+            }
+        },
+        "hireMe": {
+            "command": "npm run hire-me",
+            "items": {
+                "freelance": "Aberto a projetos freelance",
+                "collaboration": "Disponível para colaboração",
+                "learning": "Sempre aprendendo",
+                "ideas": "Explorando novas ideias"
+            }
+        },
+        "toasts": {
+            "error": "Aguarde alguns segundos antes de enviar novamente.",
+            "sent": "Mensagem enviada!",
+            "sentMessage": "Obrigado pelo contato. Retornarei em breve!",
+            "failed": "Falha ao enviar a mensagem. Tente novamente mais tarde."
+        },
+        "form": {
+            "title": "Envie uma mensagem",
+            "description": "Preencha o formulário abaixo e entrarei em contato o mais rápido possível.",
+            "name": "Nome",
+            "namePlaceholder": "João da Silva",
+            "email": "Email",
+            "emailPlaceholder": "joao@example.com",
+            "message": "Mensagem",
+            "messagePlaceholder": "Conte-me sobre sua ideia, projeto ou desafio...",
+            "submit": "Enviar Mensagem"
+        }
+    }
+}

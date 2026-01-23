@@ -1,11 +1,9 @@
 export {};
 
 declare global {
-    type SkillLevel =
-        | 'Advanced'
-        | 'Proficient'
-        | 'Working Knowledge'
-        | 'Familiar';
+    type Lang = 'pt-BR' | 'en';
+
+    type SkillLevel = 'advanced' | 'proficient' | 'working' | 'familiar';
 
     type Skill = {
         name: string;
@@ -13,7 +11,7 @@ declare global {
     };
 
     type SkillCategory = {
-        name: string;
+        key: string;
         color: string;
         skills: Skill[];
     };

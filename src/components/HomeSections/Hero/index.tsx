@@ -2,9 +2,11 @@ import { Button } from '@/components/ui/button';
 import { useUser } from '@/hooks/useUser';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export function Hero() {
     const { email, githubLink, linkedinLink } = useUser();
+    const { t } = useTranslation();
 
     return (
         <section
@@ -96,7 +98,7 @@ export function Hero() {
                             >
                                 <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
                                 <span className="text-muted-foreground font-mono text-sm">
-                                    Available for work
+                                    {t('home.status')}
                                 </span>
                             </motion.div>
 
@@ -121,7 +123,7 @@ export function Hero() {
                                 className="text-muted-foreground mb-6 font-mono text-lg md:text-xl"
                             >
                                 <span className="text-primary">{'>'}</span>{' '}
-                                Fullstack Developer
+                                {t('home.position')}
                             </motion.div>
 
                             <motion.p
@@ -130,11 +132,7 @@ export function Hero() {
                                 transition={{ delay: 0.5 }}
                                 className="text-muted-foreground mb-8 max-w-xl text-lg leading-relaxed"
                             >
-                                Software Engineer and Computer Science student
-                                focused on building modern, scalable web
-                                applications with TypeScript, React, and
-                                Next.js, driven by clean architecture and great
-                                user experiences.
+                                {t('home.description')}
                             </motion.p>
 
                             <motion.div
@@ -154,7 +152,7 @@ export function Hero() {
                                             })
                                     }
                                 >
-                                    View My Work
+                                    {t('home.cta')}
                                 </Button>
                                 <Button
                                     size="lg"
@@ -168,7 +166,7 @@ export function Hero() {
                                             })
                                     }
                                 >
-                                    Get in Touch
+                                    {t('home.ctaContact')}
                                 </Button>
                             </motion.div>
 

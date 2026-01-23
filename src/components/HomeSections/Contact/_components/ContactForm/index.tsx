@@ -9,8 +9,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema, type ContactFormData } from './schema';
 import { useRef, useState } from 'react';
 import { SendEmailAction } from './send-email-action';
+import { useTranslation } from 'react-i18next';
 
 export function ContactForm() {
+    const { t } = useTranslation();
     const [lastSubmit, setLastSubmit] = useState(0);
     const {
         register,
@@ -31,7 +33,7 @@ export function ContactForm() {
         // eslint-disable-next-line react-hooks/purity
         const now = Date.now();
         if (now - lastSubmit < 15000) {
-            toast.error('Please wait a few seconds before sending again.');
+            toast.error(t('contact.toasts.error'));
             return;
         }
         setLastSubmit(now);
@@ -40,13 +42,12 @@ export function ContactForm() {
         const { success } = await SendEmailAction(data);
 
         if (success) {
-            toast('Message sent!', {
-                description:
-                    "Thanks for reaching out. I'll get back to you soon!",
+            toast(t('contact.toasts.sent'), {
+                description: t('contact.toasts.sentMessage'),
             });
             reset();
         } else {
-            toast.error('Failed to send message. Try again later.');
+            toast.error(t('contact.toasts.failed'));
         }
     };
 
@@ -69,10 +70,11 @@ export function ContactForm() {
             />
 
             <div className="mb-6">
-                <h3 className="text-xl font-semibold">Send me a message</h3>
+                <h3 className="text-xl font-semibold">
+                    {t('contact.form.title')}
+                </h3>
                 <p className="text-muted-foreground text-sm">
-                    Fill the form below and I’ll get back to you as soon as
-                    possible.
+                    {t('contact.form.description')}
                 </p>
             </div>
 
@@ -81,11 +83,11 @@ export function ContactForm() {
                     htmlFor="name"
                     className="text-muted-foreground mb-2 block text-sm font-medium"
                 >
-                    Name
+                    {t('contact.form.name')}
                 </label>
                 <Input
                     id="name"
-                    placeholder="Jack Frost"
+                    placeholder={t('contact.form.namePlaceholder')}
                     {...register('name')}
                     className="bg-background/50 border-border/50 focus:border-primary transition-colors"
                 />
@@ -109,12 +111,12 @@ export function ContactForm() {
                     htmlFor="email"
                     className="text-muted-foreground mb-2 block text-sm font-medium"
                 >
-                    Email
+                    {t('contact.form.email')}
                 </label>
                 <Input
                     id="email"
                     type="email"
-                    placeholder="jackfrost@example.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     {...register('email')}
                     className="bg-background/50 border-border/50 focus:border-primary transition-colors"
                 />
@@ -138,12 +140,12 @@ export function ContactForm() {
                     htmlFor="message"
                     className="text-muted-foreground mb-2 block text-sm font-medium"
                 >
-                    Message
+                    {t('contact.form.message')}
                 </label>
                 <Textarea
                     id="message"
                     rows={10}
-                    placeholder="Tell me about your idea, project or challenge..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     {...register('message')}
                     className="bg-background/50 border-border/50 focus:border-primary max-h-42 w-full resize-none transition-colors"
                 />
@@ -172,7 +174,7 @@ export function ContactForm() {
                         <Loader2 className="h-4 w-4 animate-spin" />
                     ) : (
                         <>
-                            Send Message
+                            {t('contact.form.submit')}
                             <Send className="ml-2 h-4 w-4" />
                         </>
                     )}

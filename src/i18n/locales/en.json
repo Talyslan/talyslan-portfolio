@@ -1,0 +1,124 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact",
+        "curriculum": "Curriculum"
+    },
+    "home": {
+        "status": "Available for work",
+        "position": "Software Engineer",
+        "description": "Software Engineer and Computer Science student focused on building modern, scalable web applications with TypeScript, React, and Next.js, driven by clean architecture and great user experiences.",
+        "cta": "View My Work",
+        "ctaContact": "Get in Touch"
+    },
+    "about": {
+        "tinyTitle": "About",
+        "title1": "About",
+        "title2": "Me",
+        "subtitle": "Fullstack developer building scalable, well-architected web applications",
+        "description1": "I'm a fullstack developer with expertise in modern web technologies and with over 3 years of practice experience. I'm a fullstack developer focused on building scalable and well-architected web applications. My background combines formal technical education, hands-on project experience, and real-world problem solving in production systems.",
+        "techStack": "I work mainly with <tech>TypeScript</tech>, <tech>React</tech>, and <tech>Next.js</tech>, building modern frontends with a strong focus on performance, accessibility, and maintainability. On the backend, I use <tech>Node.js</tech> and <tech>Python</tech>, designing APIs, integrations, and systems that scale reliably.",
+        "highlights": {
+            "architecture": {
+                "title": "Clean Architecture",
+                "description": "Designing systems with clear boundaries, strong abstractions, and long-term maintainability."
+            },
+            "performance": {
+                "title": "Performance & Scalability",
+                "description": "Building reliable, efficient applications that scale without compromising user experience."
+            },
+            "collaboration": {
+                "title": "Collaborative Engineering",
+                "description": "Working closely with cross-functional teams to align technical solutions with real product needs."
+            }
+        },
+        "code": {
+            "name": "Talyslan C. P. Canabarro",
+            "role": "Fullstack Developer",
+            "location": "Maceió, AL || Remote",
+            "passion": "Solving real-world problems with code"
+        }
+    },
+    "skills": {
+        "tinyTitle": "Expertise",
+        "title1": "Tech",
+        "title2": "Stack",
+        "subtitle": "Technologies I use to design, build, and maintain reliable web systems",
+        "categories": {
+            "titles": {
+                "languages": "Programming Languages",
+                "frontend": "Frontend Architecture & UI Engineering",
+                "backend": "Backend Systems & APIs & Testing",
+                "foundations": "Engineering Foundations",
+                "devops": "DevOps, Infra & Engineering Tooling",
+                "design": "Design, UX & Product Tools"
+            },
+            "levels": {
+                "advanced": "Advanced",
+                "proficient": "Proficient",
+                "working": "Working Knowledge",
+                "familiar": "Familiar"
+            },
+            "levelDescriptions": {
+                "advanced": "Used daily in production. Comfortable making architectural and design decisions.",
+                "proficient": "Used regularly in real projects. Confident implementing features and solving issues.",
+                "working": "Hands-on experience in real projects, but not part of my core stack.",
+                "familiar": "Explored and used experimentally. Basic understanding of concepts and tooling."
+            }
+        }
+    },
+    "projects": {
+        "tinyTitle": "Projects",
+        "title1": "Featured",
+        "title2": "Work",
+        "subtitle": "Projects I've built and shipped",
+        "cta": "View All on GitHub",
+        "repoLink": "Source Code",
+        "liveLink": "Live Demo"
+    },
+    "contact": {
+        "tinyTitle": "Contact",
+        "title1": "Let's",
+        "title2": "Build",
+        "title3": "Something Together",
+        "subtitle": "Have a project in mind? Let's talk about how we can work together.",
+        "sideLeft": {
+            "title": "Let's connect",
+            "description": "Always open to new challenges, side projects, or just a tech chat. Whether it’s web development, integrations, or an idea you’re excited about, I’d love to hear from you.",
+
+            "items": {
+                "email": "Email",
+                "location": "Location"
+            }
+        },
+        "hireMe": {
+            "command": "npm run hire-me",
+            "items": {
+                "freelance": "Open to freelance projects",
+                "collaboration": "Available for collaboration",
+                "learning": "Always learning",
+                "ideas": "Exploring new ideas"
+            }
+        },
+        "toasts": {
+            "error": "Please wait a few seconds before sending again.",
+            "sent": "Message sent!",
+            "sentMessage": "Thanks for reaching out. I'll get back to you soon!",
+            "failed": "Failed to send message. Try again later."
+        },
+        "form": {
+            "title": "Send me a message",
+            "description": "Fill the form below and I’ll get back to you as soon as possible.",
+            "name": "Name",
+            "namePlaceholder": "Jack Frost",
+            "email": "Email",
+            "emailPlaceholder": "jackfrost@example.com",
+            "message": "Message",
+            "messagePlaceholder": "Tell me about your idea, project or challenge...",
+            "submit": "Send Message"
+        }
+    }
+}

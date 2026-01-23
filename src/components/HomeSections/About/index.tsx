@@ -1,25 +1,22 @@
 import { Code2, Rocket, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Trans, useTranslation } from 'react-i18next';
 
 export function About() {
+    const { t } = useTranslation();
+
     const highlights = [
         {
             icon: Code2,
-            title: 'Clean Architecture',
-            description:
-                'Designing codebases with clear boundaries, strong abstractions, and long-term maintainability in mind.',
+            key: 'architecture',
         },
         {
             icon: Rocket,
-            title: 'Performance & Scalability',
-            description:
-                'Building efficient systems that scale well, balancing performance, reliability, and user experience.',
+            key: 'performance',
         },
         {
             icon: Users,
-            title: 'Collaborative Engineering',
-            description:
-                'Working closely with teams, aligning technical decisions with product goals and real-world constraints.',
+            key: 'collaboration',
         },
     ];
 
@@ -36,15 +33,17 @@ export function About() {
                         transition={{ duration: 0.5 }}
                         className="mb-20 text-center"
                     >
-                        <span className="text-primary font-mono text-sm tracking-wider">
-                            ABOUT
+                        <span className="text-primary font-mono text-sm tracking-wider uppercase">
+                            {t('about.tinyTitle')}
                         </span>
                         <h2 className="mt-4 mb-6 text-4xl font-bold md:text-5xl">
-                            About <span className="text-gradient">Me</span>
+                            {t('about.title1')}{' '}
+                            <span className="text-gradient">
+                                {t('about.title2')}
+                            </span>
                         </h2>
                         <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-                            Fullstack developer building scalable,
-                            well-architected web applications
+                            {t('about.subtitle')}
                         </p>
                     </motion.div>
 
@@ -57,41 +56,17 @@ export function About() {
                             className="space-y-6"
                         >
                             <p className="text-muted-foreground leading-relaxed">
-                                I'm a fullstack developer with expertise in
-                                modern web technologies and with over 3 years of
-                                practice experience. I'm a fullstack developer
-                                focused on building scalable and
-                                well-architected web applications. My background
-                                combines formal technical education, hands-on
-                                project experience, and real-world problem
-                                solving in production systems.
+                                {t('about.description1')}
                             </p>
                             <p className="text-muted-foreground leading-relaxed">
-                                I work mainly with{' '}
-                                <span className="text-primary font-medium">
-                                    TypeScript
-                                </span>
-                                ,{' '}
-                                <span className="text-primary font-medium">
-                                    React
-                                </span>
-                                , and{' '}
-                                <span className="text-primary font-medium">
-                                    Next.js
-                                </span>{' '}
-                                building modern frontends with a strong focus on
-                                performance, accessibility, and maintainability.
-                                On the backend, I use{' '}
-                                <span className="text-primary font-medium">
-                                    NodeJS{' '}
-                                </span>
-                                and{' '}
-                                <span className="text-primary font-medium">
-                                    {' '}
-                                    Python
-                                </span>
-                                , designing APIs, integrations, and systems that
-                                scale reliably.
+                                <Trans
+                                    i18nKey="about.techStack"
+                                    components={{
+                                        tech: (
+                                            <span className="text-primary font-medium" />
+                                        ),
+                                    }}
+                                />
                             </p>
 
                             <motion.div
@@ -117,7 +92,7 @@ export function About() {
                                         <span className="ml-4">
                                             name:{' '}
                                             <span className="text-emerald-400">
-                                                "Talyslan C. P. Canabarro"
+                                                "{t('about.code.name')}"
                                             </span>
                                             ,
                                         </span>
@@ -125,7 +100,7 @@ export function About() {
                                         <span className="ml-4">
                                             role:{' '}
                                             <span className="text-emerald-400">
-                                                "Fullstack Developer"
+                                                "{t('about.code.role')}"
                                             </span>
                                             ,
                                         </span>
@@ -133,7 +108,7 @@ export function About() {
                                         <span className="ml-4">
                                             location:{' '}
                                             <span className="text-emerald-400">
-                                                "Maceió, AL || Remote"
+                                                "{t('about.code.location')}"
                                             </span>
                                             ,
                                         </span>
@@ -141,8 +116,7 @@ export function About() {
                                         <span className="ml-4">
                                             passion:{' '}
                                             <span className="text-emerald-400">
-                                                "Solving real-world problems
-                                                with code"
+                                                "{t('about.code.passion')}"
                                             </span>
                                         </span>
                                         <br />
@@ -180,10 +154,16 @@ export function About() {
                                             </motion.div>
                                             <div>
                                                 <h3 className="group-hover:text-primary mb-2 text-lg font-semibold transition-colors">
-                                                    {item.title}
+                                                    {t(
+                                                        `about.highlights.${item.key}.title`,
+                                                    )}
                                                 </h3>
                                                 <p className="text-muted-foreground">
-                                                    {item.description}
+                                                    {t(
+                                                        `about.highlights.${
+                                                            item.key
+                                                        }.description`,
+                                                    )}
                                                 </p>
                                             </div>
                                         </div>

@@ -3,20 +3,23 @@ import { motion } from 'framer-motion';
 import { ContactForm } from './_components/ContactForm';
 import { Mail, MapPin } from 'lucide-react';
 import { useUser } from '@/hooks/useUser';
+import { useTranslation } from 'react-i18next';
 
 export function Contact() {
+    const { t } = useTranslation();
     const { email } = useUser();
+
     const contactData = [
         {
             icon: Mail,
-            label: 'Email',
+            labelKey: 'items.email',
             value: email,
             href: `mailto:${email}`,
         },
         {
             icon: MapPin,
-            label: 'Location',
-            value: 'Maceió, Alagoas || Remote',
+            labelKey: 'items.location',
+            value: 'Maceió, AL — Brazil',
         },
     ];
 
@@ -33,16 +36,18 @@ export function Contact() {
                         transition={{ duration: 0.5 }}
                         className="mb-20 text-center"
                     >
-                        <span className="text-primary font-mono text-sm tracking-wider">
-                            CONTACT
+                        <span className="text-primary font-mono text-sm tracking-wider uppercase">
+                            {t('contact.tinyTitle')}
                         </span>
                         <h2 className="mt-4 mb-6 text-4xl font-bold md:text-5xl">
-                            Let's <span className="text-gradient">Build</span>{' '}
-                            Something Together
+                            {t('contact.title1')}{' '}
+                            <span className="text-gradient">
+                                {t('contact.title2')}
+                            </span>{' '}
+                            {t('contact.title3')}
                         </h2>
                         <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-                            Have a project in mind? Let's talk about how we can
-                            work together.
+                            {t('contact.subtitle')}
                         </p>
                     </motion.div>
 
@@ -56,14 +61,10 @@ export function Contact() {
                         >
                             <div>
                                 <h3 className="mb-4 text-2xl font-semibold">
-                                    Let's connect
+                                    {t('contact.sideLeft.title')}
                                 </h3>
                                 <p className="text-muted-foreground leading-relaxed">
-                                    Always open to new challenges, side
-                                    projects, or just a tech chat. Whether it’s
-                                    web development, integrations, or an idea
-                                    you’re excited about, I’d love to hear from
-                                    you.
+                                    {t('contact.sideLeft.description')}
                                 </p>
                             </div>
 
@@ -83,7 +84,9 @@ export function Contact() {
                                         </div>
                                         <div>
                                             <p className="text-muted-foreground text-sm">
-                                                {item.label}
+                                                {t(
+                                                    `contact.sideLeft.${item.labelKey}`,
+                                                )}
                                             </p>
                                             {item.href ? (
                                                 <a
@@ -118,27 +121,29 @@ export function Contact() {
                                     </div>
                                     <code className="text-muted-foreground">
                                         <span className="text-primary">$</span>{' '}
-                                        npm run hire-me
+                                        {t('contact.hireMe.command')}
                                         <br />
                                         <span className="text-emerald-400">
                                             ✓
                                         </span>{' '}
-                                        Open to freelance projects
+                                        {t('contact.hireMe.items.freelance')}
                                         <br />
                                         <span className="text-emerald-400">
                                             ✓
                                         </span>{' '}
-                                        Available for collaboration
+                                        {t(
+                                            'contact.hireMe.items.collaboration',
+                                        )}
                                         <br />
                                         <span className="text-emerald-400">
                                             ✓
                                         </span>{' '}
-                                        Always learning
+                                        {t('contact.hireMe.items.learning')}
                                         <br />
                                         <span className="text-emerald-400">
                                             ✓
                                         </span>{' '}
-                                        Exploring new ideas
+                                        {t('contact.hireMe.items.ideas')}
                                     </code>
                                 </div>
                             </motion.div>

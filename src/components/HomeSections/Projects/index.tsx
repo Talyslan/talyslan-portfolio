@@ -5,8 +5,10 @@ import { Button } from '@/components/ui/button';
 import { ProjectDialog } from './[id]';
 import { ProjectsView } from './_components/ProjectsView';
 import { useUser } from '@/hooks/useUser';
+import { useTranslation } from 'react-i18next';
 
 export function Projects() {
+    const { t } = useTranslation();
     const { githubLink } = useUser();
     const [selectedProject, setSelectedProject] = useState<Project | null>(
         null,
@@ -25,14 +27,17 @@ export function Projects() {
                         transition={{ duration: 0.5 }}
                         className="mb-20 text-center"
                     >
-                        <span className="text-primary font-mono text-sm tracking-wider">
-                            PORTFOLIO
+                        <span className="text-primary font-mono text-sm tracking-wider uppercase">
+                            {t('projects.tinyTitle')}
                         </span>
                         <h2 className="mt-4 mb-6 text-4xl font-bold md:text-5xl">
-                            Featured <span className="text-gradient">Work</span>
+                            {t('projects.title1')}{' '}
+                            <span className="text-gradient">
+                                {t('projects.title2')}
+                            </span>
                         </h2>
                         <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-                            Projects I&apos;ve built and shipped
+                            {t('projects.subtitle')}
                         </p>
                     </motion.div>
 
@@ -49,7 +54,7 @@ export function Projects() {
                                 className="border-primary text-primary"
                             >
                                 <Github className="mr-2 h-4 w-4" />
-                                View All on GitHub
+                                {t('projects.cta')}
                             </Button>
                         </a>
                     </div>

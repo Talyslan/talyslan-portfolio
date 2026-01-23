@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectDialogProps {
     project: Project | null;
@@ -11,6 +12,8 @@ interface ProjectDialogProps {
 }
 
 export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
+    const { t } = useTranslation();
+
     return (
         <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
             <AnimatePresence>
@@ -69,7 +72,7 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
                                                 rel="noopener noreferrer"
                                             >
                                                 <ExternalLink className="mr-2 h-4 w-4" />
-                                                Live Demo
+                                                {t('projects.liveLink')}
                                             </a>
                                         </Button>
                                     )}
@@ -82,7 +85,7 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
                                                 rel="noopener noreferrer"
                                             >
                                                 <Github className="mr-2 h-4 w-4" />
-                                                Source Code
+                                                {t('projects.repoLink')}
                                             </a>
                                         </Button>
                                     )}
