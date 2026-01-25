@@ -120,5 +120,9 @@
             "messagePlaceholder": "Conte-me sobre sua ideia, projeto ou desafio...",
             "submit": "Enviar Mensagem"
         }
+    },
+     "footer": {
+        "builtBy": "Construido por",
+        "copyright": "Todos os direitos reservados"
     }
 }

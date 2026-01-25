@@ -120,5 +120,9 @@
             "messagePlaceholder": "Tell me about your idea, project or challenge...",
             "submit": "Send Message"
         }
+    },
+    "footer": {
+        "builtBy": "Built by",
+        "copyright": "All rights reserved"
     }
 }

@@ -1,9 +1,12 @@
 import { Terminal, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useUser } from '@/hooks/useUser';
+import { useTranslation } from 'react-i18next';
+import { LanguageSwitcher } from '../LanguageSwitcher';
 
 export function Footer() {
     const { email, linkedinLink, githubLink } = useUser();
+    const { t } = useTranslation();
 
     return (
         <footer className="border-border/50 bg-card/20 border-t py-8">
@@ -12,7 +15,7 @@ export function Footer() {
                     <div className="text-muted-foreground flex items-center gap-2">
                         <Terminal className="text-primary h-4 w-4" />
                         <span className="font-mono text-xs">
-                            Built by{' '}
+                            {t('footer.builtBy')}{' '}
                             <span className="text-primary">
                                 Talyslan C. P. Canabarro
                             </span>
@@ -20,7 +23,7 @@ export function Footer() {
                     </div>
 
                     <p className="text-muted-foreground text-sm">
-                        © {new Date().getFullYear()} All rights reserved.
+                        © {new Date().getFullYear()} {t('footer.copyright')}.
                     </p>
 
                     <div className="flex items-center gap-4">
@@ -47,6 +50,7 @@ export function Footer() {
                                 <Icon className="h-5 w-5" />
                             </motion.a>
                         ))}
+                        <LanguageSwitcher />
                     </div>
                 </div>
             </div>

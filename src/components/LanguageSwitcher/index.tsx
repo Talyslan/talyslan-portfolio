@@ -48,7 +48,7 @@ export function LanguageSwitcher() {
                     size="icon"
                     className="border-primary/50 bg-background/50 hover:bg-primary hover:border-primary hover:text-primary-foreground h-9 w-9 rounded-full p-0 transition-all duration-300"
                 >
-                    <span className="text-primary flex h-full w-full items-center justify-center text-lg leading-none">
+                    <span className="text-primary hover:text-primary-foreground flex h-full w-full items-center justify-center text-lg leading-none">
                         {LANGUAGES[currentLang].flag}
                     </span>
                 </Button>
