@@ -1,5 +1,7 @@
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { Button } from '@/components/ui/button';
 import { useUser } from '@/hooks/useUser';
+
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +9,15 @@ import { useTranslation } from 'react-i18next';
 export function Hero() {
     const { email, githubLink, linkedinLink } = useUser();
     const { t } = useTranslation();
+
+    const scrollToSection = (id: string) => {
+        const smoother = ScrollSmoother.get();
+        const el = document.getElementById(id);
+
+        if (smoother && el) {
+            smoother.scrollTo(el, true);
+        }
+    };
 
     return (
         <section
@@ -144,13 +155,7 @@ export function Hero() {
                                 <Button
                                     size="lg"
                                     className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
-                                    onClick={() =>
-                                        document
-                                            .getElementById('projects')
-                                            ?.scrollIntoView({
-                                                behavior: 'smooth',
-                                            })
-                                    }
+                                    onClick={() => scrollToSection('projects')}
                                 >
                                     {t('home.cta')}
                                 </Button>
@@ -158,13 +163,7 @@ export function Hero() {
                                     size="lg"
                                     variant="outline"
                                     className="bg-card/30 hover:border-primary hover:text-primary hover:bg-muted border-muted/50 backdrop-blur-sm/50"
-                                    onClick={() =>
-                                        document
-                                            .getElementById('contact')
-                                            ?.scrollIntoView({
-                                                behavior: 'smooth',
-                                            })
-                                    }
+                                    onClick={() => scrollToSection('contact')}
                                 >
                                     {t('home.ctaContact')}
                                 </Button>
@@ -226,7 +225,10 @@ export function Hero() {
                         ease: 'easeInOut',
                     }}
                 >
-                    <div className="border-border/50 bg-card/30 rounded-full border p-2 backdrop-blur-sm">
+                    <div
+                        className="border-border/50 bg-card/30 cursor-pointer rounded-full border p-2 backdrop-blur-sm"
+                        onClick={() => scrollToSection('about')}
+                    >
                         <ArrowDown className="text-muted-foreground h-4 w-4" />
                     </div>
                 </motion.div>

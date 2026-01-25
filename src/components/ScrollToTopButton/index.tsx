@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -7,12 +8,13 @@ export function ScrollToTopButton() {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
-        const onScroll = () => {
-            setVisible(window.scrollY > 600);
-        };
+        const trigger = ScrollTrigger.create({
+            start: 600,
+            onEnter: () => setVisible(true),
+            onLeaveBack: () => setVisible(false),
+        });
 
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
+        return () => trigger.kill();
     }, []);
 
     function scrollToTop() {

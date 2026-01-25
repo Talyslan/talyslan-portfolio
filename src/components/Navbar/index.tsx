@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useUser } from '@/hooks/useUser';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../LanguageSwitcher';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
 const navLinks = [
     { key: 'home', href: '#home' },
@@ -28,6 +29,13 @@ export function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    function scrollToSection(id: string) {
+        const smoother = ScrollSmoother.get();
+        if (!smoother) return;
+
+        smoother.scrollTo(id, true);
+    }
 
     return (
         <motion.nav
@@ -55,14 +63,19 @@ export function Navbar() {
                             <motion.a
                                 key={link.key}
                                 href={link.href}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection(link.href);
+                                }}
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-200"
+                                className="text-muted-foreground hover:text-primary text-sm font-medium"
                             >
                                 {t(`nav.${link.key}`)}
                             </motion.a>
                         ))}
+
                         <a
                             href={curriculumLink}
                             download
@@ -102,14 +115,18 @@ export function Navbar() {
                             className="border-border/50 border-t py-4 md:hidden"
                         >
                             {navLinks.map((link) => (
-                                <Link
+                                <a
                                     key={link.key}
-                                    to={link.href}
-                                    className="text-muted-foreground hover:text-primary block py-3 transition-colors"
-                                    onClick={() => setIsOpen(false)}
+                                    href={link.href}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        scrollToSection(link.href);
+                                        setIsOpen(false);
+                                    }}
+                                    className="text-muted-foreground hover:text-primary block py-3"
                                 >
                                     {t(`nav.${link.key}`)}
-                                </Link>
+                                </a>
                             ))}
 
                             <div className="mt-4 flex flex-col gap-4">
