@@ -7,7 +7,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Activity, useEffect } from 'react';
 
 const LANGUAGES = {
     'pt-BR': {
@@ -24,7 +24,11 @@ const LANGUAGES = {
 
 type Lang = keyof typeof LANGUAGES;
 
-export function LanguageSwitcher() {
+interface IProps {
+    isExpanded?: boolean;
+}
+
+export function LanguageSwitcher({ isExpanded = false }: IProps) {
     const { lang } = useParams<{ lang?: Lang }>();
     const navigate = useNavigate();
     const { i18n } = useTranslation();
@@ -42,17 +46,33 @@ export function LanguageSwitcher() {
 
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="border-primary/50 bg-background/50 hover:bg-primary hover:border-primary hover:text-primary-foreground h-9 w-9 rounded-full p-0 transition-all duration-300"
-                >
-                    <span className="text-primary hover:text-primary-foreground flex h-full w-full items-center justify-center text-lg leading-none">
-                        {LANGUAGES[currentLang].flag}
-                    </span>
-                </Button>
-            </DropdownMenuTrigger>
+            <Activity mode={isExpanded ? 'visible' : 'hidden'}>
+                <DropdownMenuTrigger asChild>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="border-primary bg-background hover:bg-primary hover:border-primary hover:text-primary-foreground w-full transition-all duration-300"
+                    >
+                        <span className="text-primary hover:text-primary-foreground flex h-full w-full items-center justify-center text-sm leading-none">
+                            {LANGUAGES[currentLang].name}
+                        </span>
+                    </Button>
+                </DropdownMenuTrigger>
+            </Activity>
+
+            <Activity mode={!isExpanded ? 'visible' : 'hidden'}>
+                <DropdownMenuTrigger asChild>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="border-primary/50 bg-background/50 hover:bg-primary hover:border-primary hover:text-primary-foreground h-9 w-9 rounded-full p-0 transition-all duration-300"
+                    >
+                        <span className="text-primary hover:text-primary-foreground flex h-full w-full items-center justify-center text-lg leading-none">
+                            {LANGUAGES[currentLang].flag}
+                        </span>
+                    </Button>
+                </DropdownMenuTrigger>
+            </Activity>
 
             <DropdownMenuContent align="end">
                 {(Object.keys(LANGUAGES) as Lang[]).map((key) => (

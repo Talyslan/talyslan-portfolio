@@ -99,7 +99,7 @@ export function Navbar() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="border-border/50 bg-background/95 border-t py-4 backdrop-blur-lg md:hidden"
+                            className="border-border/50 border-t py-4 md:hidden"
                         >
                             {navLinks.map((link) => (
                                 <Link
@@ -111,13 +111,17 @@ export function Navbar() {
                                     {t(`nav.${link.key}`)}
                                 </Link>
                             ))}
-                            <Button
-                                variant="outline"
-                                size="sm"
-                                className="border-primary text-primary mt-4 w-full"
-                            >
-                                {t('nav.curriculum')}
-                            </Button>
+
+                            <div className="mt-4 flex flex-col gap-4">
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="border-primary text-primary w-full"
+                                >
+                                    {t('nav.curriculum')}
+                                </Button>
+                                <LanguageSwitcher isExpanded={true} />
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
