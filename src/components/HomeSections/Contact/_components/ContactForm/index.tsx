@@ -20,7 +20,7 @@ export function ContactForm() {
         reset,
         formState: { errors, isSubmitting },
     } = useForm<ContactFormData>({
-        resolver: zodResolver(contactSchema),
+        resolver: zodResolver(contactSchema(t)),
     });
 
     const honeypotRef = useRef<HTMLInputElement>(null);

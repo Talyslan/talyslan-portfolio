@@ -114,10 +114,13 @@
             "description": "Fill the form below and I’ll get back to you as soon as possible.",
             "name": "Name",
             "namePlaceholder": "Jack Frost",
+            "nameError": "Name must have at least 2 characters",
             "email": "Email",
             "emailPlaceholder": "jackfrost@example.com",
+            "emailError": "Invalid email address",
             "message": "Message",
             "messagePlaceholder": "Tell me about your idea, project or challenge...",
+            "messageError": "Message must have at least 10 characters",
             "submit": "Send Message"
         }
     },

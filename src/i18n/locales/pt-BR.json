@@ -114,10 +114,13 @@
             "description": "Preencha o formulário abaixo e entrarei em contato o mais rápido possível.",
             "name": "Nome",
             "namePlaceholder": "João da Silva",
+            "nameError": "Nome deve ter pelo menos 2 caracteres",
             "email": "Email",
             "emailPlaceholder": "joao@example.com",
+            "emailError": "Endereço de email inválido",
             "message": "Mensagem",
             "messagePlaceholder": "Conte-me sobre sua ideia, projeto ou desafio...",
+            "messageError": "Mensagem deve ter pelo menos 10 caracteres",
             "submit": "Enviar Mensagem"
         }
     },

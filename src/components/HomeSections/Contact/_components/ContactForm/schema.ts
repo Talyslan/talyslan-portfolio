@@ -1,9 +1,11 @@
 import { z } from 'zod';
+import type { TFunction } from 'i18next';
 
-export const contactSchema = z.object({
-    name: z.string().min(2, 'Name must have at least 2 characters'),
-    email: z.email('Invalid email address'),
-    message: z.string().min(10, 'Message must have at least 10 characters'),
-});
+export const contactSchema = (t: TFunction) =>
+    z.object({
+        name: z.string().min(2, t('contact.form.nameError')),
+        email: z.string().email(t('contact.form.emailError')),
+        message: z.string().min(10, t('contact.form.messageError')),
+    });
 
-export type ContactFormData = z.infer<typeof contactSchema>;
+export type ContactFormData = z.infer<ReturnType<typeof contactSchema>>;
