@@ -7,6 +7,7 @@ import { useUser } from '@/hooks/useUser';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../LanguageSwitcher';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ThemeToggle } from '../ThemeToggle';
 
 const navLinks = [
     { key: 'home', href: '#home' },
@@ -91,6 +92,9 @@ export function Navbar() {
                                 {t('nav.curriculum')}
                             </Button>
                         </a>
+
+                        <ThemeToggle />
+
                         <LanguageSwitcher />
                     </div>
 
@@ -112,7 +116,7 @@ export function Navbar() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="border-border/50 border-t py-4 md:hidden"
+                            className="border-border/50 border-t py-4 backdrop-blur-lg md:hidden"
                         >
                             {navLinks.map((link) => (
                                 <a
@@ -129,7 +133,7 @@ export function Navbar() {
                                 </a>
                             ))}
 
-                            <div className="mt-4 flex flex-col gap-4">
+                            <div className="mt-4 flex flex-col gap-4 bg-transparent">
                                 <Button
                                     variant="outline"
                                     size="sm"
@@ -137,6 +141,9 @@ export function Navbar() {
                                 >
                                     {t('nav.curriculum')}
                                 </Button>
+
+                                <ThemeToggle isExpanded={true} />
+
                                 <LanguageSwitcher isExpanded={true} />
                             </div>
                         </motion.div>

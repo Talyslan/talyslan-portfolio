@@ -22,7 +22,7 @@ export function Hero() {
     return (
         <section
             id="home"
-            className="relative flex min-h-screen items-center justify-center overflow-hidden py-24"
+            className="relative flex min-h-screen items-center justify-center py-24"
         >
             <div className="from-background via-background to-primary/5 absolute inset-0 bg-linear-to-br" />
 
@@ -53,7 +53,7 @@ export function Hero() {
                 }}
             />
 
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(var(--primary)_1px,transparent_1px),linear-gradient(90deg,var(--primary)_1px,transparent_1px)] bg-size-[80px_80px] opacity-[0.02]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(var(--grid-color)_1px,transparent_1px),linear-gradient(90deg,var(--grid-color)_1px,transparent_1px)] bg-size-[80px_80px] opacity-[0.06] dark:opacity-[0.04]" />
 
             <div className="relative z-10 container mx-auto px-6">
                 <div className="mx-auto max-w-5xl">

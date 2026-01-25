@@ -25,7 +25,7 @@ export function Skills() {
     const { t } = useTranslation();
 
     return (
-        <section id="skills" className="relative overflow-hidden py-20">
+        <section id="skills" className="relative py-20">
             <div className="from-background via-card/30 to-background absolute inset-0 bg-linear-to-b" />
 
             <div className="relative z-10 container mx-auto px-6">

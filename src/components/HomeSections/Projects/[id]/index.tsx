@@ -43,7 +43,7 @@ export function ProjectDialog({ project, open, onClose }: ProjectDialogProps) {
                                 <div className="from-background via-background/40 absolute right-0 bottom-0 left-0 h-40 bg-linear-to-t to-transparent" />
                             </div>
 
-                            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+                            <div className="flex-1 p-6 md:p-8">
                                 <DialogTitle className="mb-4 text-2xl font-bold md:text-3xl">
                                     {project.title}
                                 </DialogTitle>
