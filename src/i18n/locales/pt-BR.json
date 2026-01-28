@@ -124,7 +124,42 @@
             "submit": "Enviar Mensagem"
         }
     },
-     "footer": {
+    "personal": {
+        "tinyTitle": "Pessoal",
+        "title1": "Além do",
+        "title2": "Código",
+        "subtitle": "Minha jornada acadêmica, experiências profissionais e paixões pessoais",
+        "education": "Minha formação começou no IFAL (Instituto Federal de Alagoas), onde concluí o curso técnico em Desenvolvimento de Sistemas. Atualmente, estou cursando Bacharelado em Sistemas de Informação, também no IFAL, aprofundando meus conhecimentos em engenharia de software e arquitetura de sistemas.",
+        "experience": "Durante minha trajetória, tive a oportunidade de participar de projetos de pesquisa PIBITI, onde desenvolvi habilidades em pesquisa aplicada e inovação tecnológica. Realizei estágios que me proporcionaram experiência prática em ambientes corporativos, além de trabalhar como freelancer em diversos projetos, o que me permitiu desenvolver autonomia e versatilidade técnica.",
+        "hobbiesTitle": "Interesses Pessoais",
+        "media": {
+            "pibiti": "Apresentação final de projeto de pesquisa — comunicação, clareza e responsabilidade",
+            "csbc": "Participando de eventos acadêmicos e científicos em Ciência da Computação",
+            "hackathon": "Experiência em hackathon — trabalho em equipe, pressão e resolução rápida de problemas",
+            "extension": "Projeto de extensão universitária focado em impacto social e tecnologia",
+            "jiujitsu": "Treino de Jiu-Jitsu brasileiro — disciplina, consistência e mentalidade",
+            "basketball": "Prática de basquete — trabalho em equipe, foco e resiliência",
+            "guitar": "Tocando violão — criatividade, expressão e equilíbrio"
+        },
+        "hobbies": {
+            "jiujitsu": {
+                "title": "Jiu-Jitsu"
+            },
+            "music": {
+                "title": "Música"
+            },
+            "basketball": {
+                "title": "Basquete"
+            },
+            "volleyball": {
+                "title": "Vôlei"
+            },
+            "movies": {
+                "title": "Filmes"
+            }
+        }
+    },
+    "footer": {
         "builtBy": "Construido por",
         "copyright": "Todos os direitos reservados"
     }

@@ -124,6 +124,41 @@
             "submit": "Send Message"
         }
     },
+    "personal": {
+        "tinyTitle": "Personal",
+        "title1": "Beyond",
+        "title2": "Code",
+        "subtitle": "My academic journey, professional experiences, and personal passions",
+        "education": "My education began at IFAL (Federal Institute of Alagoas), where I completed a technical degree in Systems Development. Currently, I'm pursuing a Bachelor's degree in Information Systems, also at IFAL, deepening my knowledge in software engineering and systems architecture.",
+        "experience": "Throughout my journey, I had the opportunity to participate in PIBITI research projects, where I developed skills in applied research and technological innovation. I completed internships that provided me with practical experience in corporate environments, in addition to working as a freelancer on various projects, which allowed me to develop autonomy and technical versatility.",
+        "hobbiesTitle": "Personal Interests",
+        "media": {
+            "pibiti": "Final presentation of a research project — communication, clarity and responsibility",
+            "csbc": "Participating in academic and scientific events in Computer Science",
+            "hackathon": "Hackathon experience — teamwork, pressure and fast problem-solving",
+            "extension": "University extension project focused on social impact and technology",
+            "jiujitsu": "Brazilian Jiu-Jitsu training — discipline, consistency and mindset",
+            "basketball": "Basketball practice — teamwork, focus and resilience",
+            "guitar": "Playing acoustic guitar — creativity, expression and balance"
+        },
+        "hobbies": {
+            "jiujitsu": {
+                "title": "Jiu-Jitsu"
+            },
+            "music": {
+                "title": "Music"
+            },
+            "basketball": {
+                "title": "Basketball"
+            },
+            "volleyball": {
+                "title": "Volleyball"
+            },
+            "movies": {
+                "title": "Movies"
+            }
+        }
+    },
     "footer": {
         "builtBy": "Built by",
         "copyright": "All rights reserved"
