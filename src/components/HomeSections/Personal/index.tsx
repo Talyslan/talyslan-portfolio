@@ -219,7 +219,7 @@ export function Personal() {
                                 <h3 className="text-muted-foreground text-lg font-medium">
                                     {t('personal.hobbiesTitle')}
                                 </h3>
-                                <div className="flex items-center gap-6">
+                                <div className="flex flex-wrap items-center justify-center gap-6">
                                     {hobbies.map((hobby, index) => (
                                         <motion.div
                                             key={hobby.key}
