@@ -2,8 +2,6 @@ import { Terminal, Github, Linkedin, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useUser } from '@/hooks/useUser';
 import { useTranslation } from 'react-i18next';
-import { LanguageSwitcher } from '../LanguageSwitcher';
-import { ThemeToggle } from '../ThemeToggle';
 
 export function Footer() {
     const { email, linkedinLink, githubLink } = useUser();
@@ -54,10 +52,6 @@ export function Footer() {
                                 <Icon className="h-5 w-5" />
                             </motion.a>
                         ))}
-
-                        <ThemeToggle />
-
-                        <LanguageSwitcher />
                     </div>
                 </div>
             </div>

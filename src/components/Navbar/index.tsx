@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { useUser } from '@/hooks/useUser';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../LanguageSwitcher';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ThemeToggle } from '../ThemeToggle';
 
 const navLinks = [
@@ -32,10 +31,11 @@ export function Navbar() {
     }, []);
 
     function scrollToSection(id: string) {
-        const smoother = ScrollSmoother.get();
-        if (!smoother) return;
-
-        smoother.scrollTo(id, true);
+        const sectionId = id.startsWith('#') ? id.substring(1) : id;
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     return (
@@ -99,7 +99,7 @@ export function Navbar() {
                     </div>
 
                     <button
-                        className="text-foreground md:hidden"
+                        className="text-foreground relative z-50 md:hidden"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? (

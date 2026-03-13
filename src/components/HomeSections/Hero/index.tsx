@@ -1,4 +1,3 @@
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { Button } from '@/components/ui/button';
 import { useUser } from '@/hooks/useUser';
 
@@ -11,11 +10,10 @@ export function Hero() {
     const { t } = useTranslation();
 
     const scrollToSection = (id: string) => {
-        const smoother = ScrollSmoother.get();
         const el = document.getElementById(id);
 
-        if (smoother && el) {
-            smoother.scrollTo(el, true);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -25,33 +23,6 @@ export function Hero() {
             className="relative flex min-h-screen items-center justify-center py-24"
         >
             <div className="from-background via-background to-primary/5 absolute inset-0 bg-linear-to-br" />
-
-            <motion.div
-                className="bg-primary/5 absolute top-1/4 left-1/4 h-125 w-125 rounded-full blur-[100px]"
-                animate={{
-                    x: [0, 50, 0],
-                    y: [0, -30, 0],
-                    scale: [1, 1.1, 1],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                }}
-            />
-            <motion.div
-                className="bg-primary/3 absolute right-1/4 bottom-1/4 h-100 w-100 rounded-full blur-[80px]"
-                animate={{
-                    x: [0, -40, 0],
-                    y: [0, 40, 0],
-                    scale: [1, 0.9, 1],
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                }}
-            />
 
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(var(--grid-color)_1px,transparent_1px),linear-gradient(90deg,var(--grid-color)_1px,transparent_1px)] bg-size-[80px_80px] opacity-[0.06] dark:opacity-[0.04]" />
 

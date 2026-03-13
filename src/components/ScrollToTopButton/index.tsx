@@ -1,21 +1,24 @@
-import { useEffect, useState } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {
+    motion,
+    AnimatePresence,
+    useScroll,
+    useMotionValueEvent,
+} from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
 export function ScrollToTopButton() {
     const [visible, setVisible] = useState(false);
+    const { scrollY } = useScroll();
 
-    useEffect(() => {
-        const trigger = ScrollTrigger.create({
-            start: 600,
-            onEnter: () => setVisible(true),
-            onLeaveBack: () => setVisible(false),
-        });
-
-        return () => trigger.kill();
-    }, []);
+    useMotionValueEvent(scrollY, 'change', (latest) => {
+        if (latest > 600) {
+            setVisible(true);
+        } else {
+            setVisible(false);
+        }
+    });
 
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -28,7 +31,7 @@ export function ScrollToTopButton() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
-                    className="fixed right-6 bottom-8 z-50"
+                    className="fixed right-6 bottom-24 z-[100] md:bottom-8"
                 >
                     <Button
                         size="icon"

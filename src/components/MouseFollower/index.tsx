@@ -9,6 +9,9 @@ import { useMousePosition } from '@/hooks/useMousePosition';
 
 export function MouseFollower() {
     const { x, y } = useMousePosition();
+    const isTouchDevice =
+        typeof window !== 'undefined' &&
+        ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 
     const rawX = useMotionValue(0);
     const rawY = useMotionValue(0);
@@ -25,9 +28,10 @@ export function MouseFollower() {
     });
 
     useEffect(() => {
+        if (isTouchDevice) return;
         rawX.set(x);
         rawY.set(y);
-    }, [x, y, smoothX, smoothY, rawX, rawY]);
+    }, [x, y, smoothX, smoothY, rawX, rawY, isTouchDevice]);
 
     const softGlow = useMotionTemplate`
     radial-gradient(
@@ -44,6 +48,8 @@ export function MouseFollower() {
         transparent 60%
     )
 `;
+
+    if (isTouchDevice) return null;
 
     return (
         <>
